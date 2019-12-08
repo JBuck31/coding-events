@@ -12,7 +12,8 @@ import java.util.List;
 @RequestMapping("events")
 public class EventController {
 
-    @GetMapping
+
+    @GetMapping //lives at /events
     public String displayAllEvents(Model model) {
         List<String> events = new ArrayList<>();
         events.add("Code with Pride");
@@ -23,6 +24,8 @@ public class EventController {
         return "events/index";
     }
 
+    //lives at /events/create
+    @GetMapping("create")
     public String renderCreateEventForm() {
         return "events/create";
     }
