@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+<nav th:fragment="navigation">
+    <p th:unless="${events} and ${events.size()}">No events!</p> <!--if there is not an events list, or no events in the list, display No events!-->
+    <ul>
+        <th:block th:each="event : ${events}">
+            <li th:text="${event}"></li>
+        </th:block>
+    </ul>
+</nav>
+</body>
+</html>
