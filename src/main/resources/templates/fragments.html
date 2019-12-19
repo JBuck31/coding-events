@@ -5,12 +5,11 @@
     <title></title>
 </head>
 <body>
-<nav th:fragment="navigation">
-    <p th:unless="${events} and ${events.size()}">No events!</p> <!--if there is not an events list, or no events in the list, display No events!-->
+
+<nav th:fragment="navigation"> <!--"navigation" is the identifier for this fragment when referencing it in other places-->
     <ul>
-        <th:block th:each="event : ${events}">
-            <li th:text="${event}"></li>
-        </th:block>
+        <li><a href ="/events">All Events</a></li>
+        <li><a href="events/create"/>Create Event</a></li>
     </ul>
 </nav>
 </body>
